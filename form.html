@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <title>Form</title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="index.html">Our School Floorball</a>
+        <a href="about_floorball.html">About Floorball</a>
+        <a href="form.html">Sign Up Form</a>
+        <a href="shop.html">Shopping </a>
+        <a href="cart.html"><i class=" far fa-shopping-bag cart"></i><span>0</span></a>
+    </div>
+    <div class="formdiv" >
+        <form id ="form">
+            <h1>Sign Up To Join Us For Trial</h1>
+            <fieldset>
+                <legend>Personal Information</legend>
+            <label for="firstName">Full Name</label>
+            <br>
+            <input type="text" id="firstName" name="name" >
+            <br>
+            <label for="gender">Gender</label>
+            <br>
+            <select name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <br>
+            <label for="contact">Contact Number</label>
+            <br>
+            <input type="number" id="contact" name="contact" >
+            <br>
+            <label for="email">Email Address</label>
+            <br>
+            <input type="email" id="email" name="email" placeholder="eg.1234@gmail.com">
+            </fieldset>
+            <fieldset>
+                <legend>Past Experience</legend>
+                <label for="past">Do You Have Experience?</label>
+                <br>
+                <input type="radio" id="yes1" name="yesorno" value="yes"/>Yes
+                <input type="radio" id="no1" name="yesorno" value="no">No
+                <br>
+                <label for="school">Which Secondary School are you from?</label>
+                <br>
+                <input type="text" id="school" name="school">
+                <br>
+                <label for="years">How many years have you been playing floorball(skip this question if you have no experience)</label>
+                <br>
+                <input type="number" id="year" name="year">
+            </fieldset>
+            <fieldset>
+                <legend>Interest</legend>
+                <label for="role">Which position are you interested in playing?(can pick more than 1)</label>
+                <br>
+                <input type="checkbox" id="forward" name="position" value="Forward"/>Forward
+                <br>
+                <input type="checkbox" id="center" name="position" value="Center"/>Center
+                <br>
+                <input type="checkbox" id="defender" name="position" value="Defender"/>Defender
+                <br>
+                <input type="checkbox" id="goalKeeper" name="position" value="GoalKeeper"/>Goal Keeper
+            </fieldset>
+            <fieldset>
+                <legend>Health Condition</legend>
+                <label for="injury">Do you have any past injuries?</label>
+                <br>
+                <div>
+                    <input type="radio" id="yes2" name="yesno" value="yes"/>Yes
+                    <input type="radio" id="no2" name="yesno" value="no">No
+                </div>
+                <br>
+                <label for="medical">Do you have any medical condition?(eg. asthma)</label>
+                <br>
+                <div>
+                    <input type="radio" id="yes3" name="Yesorno" value="yes"/>Yes
+                    <input type="radio" id="no3" name="Yesorno" value="no">No   
+                </div>
+                <br>
+                <label for="condition">If yes please state what medical condition</label>
+                <br>
+                <input type="text" id="condition" name="condition">
+            </fieldset>
+            <br>
+            <div class="submit">
+            <input type="submit" value="submit"/>
+            </div>
+        </form>
+    </div>
+    <script src="shop.js"></script>
+    <script src="submit.js"></script>
+</body>
+</html>

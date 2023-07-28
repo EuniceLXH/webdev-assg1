@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="submission.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="index.html">Our School Floorball</a>
+        <a href="about_floorball.html">About Floorball</a>
+        <a href="form.html">Sign Up Form</a>
+        <a href="shop.html">Shopping </a>
+        <a href="cart.html"><i class=" far fa-shopping-bag cart"></i><span>0</span></a>
+    </div>
+
+    <h1>Thank You For Submitting The Form!</h1>
+    <h4 class="here">click <a href="index.html">HERE</a> to rturn to our home page</h4>
+    <div class="Response">
+        <div class="answer">
+            <h2>Submitted Information</h2>
+            <h3>Full Name:</h3>
+            <span id="first-name"></span>
+            <h3>Gender:</h3>
+            <span id="Gen"></span>
+            <h3>Contact Number:</h3>
+            <span id="Con"></span>
+            <h3>Email Address</h3>
+            <span id="Mail"></span>
+            <h3>Do You Have Experience:</h3>
+            <span id="Exp"></span>
+            <h3>Which Secondary School Are You From:</h3>
+            <span id="Sch"></span>
+            <h3>How Many Years Have You Been Playing:</h3>
+            <span id="Yea"></span>
+            <h3>Which Position Are You Interested In Playing:</h3>
+            <span id="Pos">
+               <ul id="list">
+               </ul> 
+            </span>
+            <h3>Do You Have Any Past Injuries:</h3>
+            <span id="Injur"></span>
+            <h3>Do You Have any Medical Condition:</h3>
+            <span id="Med"></span>
+            <h3>If Yes Please State What Medical Condition:</h3>
+            <span id="MedCon"></span>
+        </div>
+            
+        
+    </div>
+    <script>
+        const firstName = localStorage.getItem('first-name');
+        const gender = localStorage.getItem('Gen');
+        const contact = localStorage.getItem('Con');
+        const email = localStorage.getItem('Mail');
+        const yes1 = localStorage.getItem('Yes1');
+        const no1 = localStorage.getItem('No1');
+        const school = localStorage.getItem('Sch');
+        const year = localStorage.getItem('Yea');
+        const forward = localStorage.getItem('For');
+        const center = localStorage.getItem('Cen');
+        const defender = localStorage.getItem('Def');
+        const goalKeeper = localStorage.getItem('GK');
+        const yes2 = localStorage.getItem('Yes2');
+        const no2 = localStorage.getItem('No2');
+        const yes3 = localStorage.getItem('Yes3');
+        const no3 = localStorage.getItem('No3');
+        const condition = localStorage.getItem('MedCon');
+
+        document.getElementById('first-name').textContent = firstName;
+        document.getElementById('Gen').textContent = gender;
+        document.getElementById('Con').textContent = contact;
+        document.getElementById('Mail').textContent = email;
+        if (yes1 == 'true') {
+            document.getElementById('Exp').textContent = 'Yes'
+        }
+        else {
+            document.getElementById('Exp').textContent = 'No'
+        }
+        document.getElementById('Sch').textContent = school;
+        document.getElementById('Yea').textContent = year;
+        console.log(forward);
+        if (forward == "true") {
+            document.getElementById('list').innerHTML += `
+                <li>Forward</li>
+            `;
+        }
+        if (center == "true") {
+            document.getElementById('list').innerHTML += `
+                <li>Center</li>
+            `;
+
+        }
+        if (defender == "true") {
+            document.getElementById('list').innerHTML += `
+                <li>Defender</li>
+            `;
+        }
+        if (goalKeeper == "true") {
+            document.getElementById('list').innerHTML += `
+                <li>Goal Keeper</li>
+            `;
+        }
+        
+
+
+        if (yes2 == 'true') {
+            document.getElementById('Injur').textContent = 'Yes'
+        }
+        else {
+            document.getElementById('Injur').textContent = 'No'
+        }
+        if (yes3 == 'true') {
+            document.getElementById('Med').textContent = 'Yes'
+        }
+        else {
+            document.getElementById('Med').textContent = 'No'
+        }
+        document.getElementById('MedCon').textContent = condition;
+
+
+    </script>
+
+</body>
+</html>

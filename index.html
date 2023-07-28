@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="sport.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="index.html">Our School Floorball</a>
+        <a href="about_floorball.html">About Floorball</a>
+        <a href="form.html">Sign Up Form</a>
+        <a href="shop.html">Shopping </a>
+        <a href="cart.html"><i class=" far fa-shopping-bag cart"></i><span>0</span></a>
+    </div>
+
+    <h1>FLOORBALL   <img src="floorball2-removebg-preview.png" alt="floorball icon" width="50px" height="50px"></h1>
+    <h2 class="interest">Are You Interested To Join SHINE's Floorball Club?</h2>
+    <h2 id="join">JOIN US NOW!</h2>
+    <table border="1">
+        <caption>Training Details</caption>
+        <tr><th>Training Days:</th><th>Tuesday</th><th>Thursday</th><th>Saturday</th></tr>
+        <tr><th>Event:</th><td>Physical Training</td><td colspan="2" class="center">Court Training</td></tr>
+        <tr><th>Timing:</th><td colspan="2" class="center">6pm to 9pm</td><td>9am to 12pm</td></tr>
+        <tr><th>Attire:</th><td>Drifit Shirt</td><td>Black</td><td>Red</td></tr>
+        <tr><th>Things to bring:</th>
+            <td>
+            <ol>
+                <li>Running Shoe</li>
+                <li>Water Bottle</li>
+                <li>Towel</li>
+            </ol>
+            </td>
+            <td colspan="2">
+                <ol>
+                    <li>Court Shoe</li>
+                    <li>Water Bottle</li>
+                    <li>Towel</li>
+                    <li>Floorball Stick</li>
+                </ol>
+            </td>
+        </tr>
+        
+    </table>
+    <br>
+    <br>
+    <h2 class="member">Our Team Members</h2>
+      
+      <!-- The four columns -->
+      <div class="row">
+        <div class="column">
+          <img src="floorballfriend.jpg" alt="team" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+          <img src="floorballfriend2.jpg" alt="team" style="width:100%" onclick="myFunction(this);">
+        </div>
+        <div class="column">
+          <img src="floorballfriend3.jpg" alt="team" style="width:100%" onclick="myFunction(this);">
+        </div>
+      </div>
+      <script>
+        function myFunction(imgs) {
+          var expandImg = document.getElementById("expandedImg");
+          var imgText = document.getElementById("imgtext");
+          expandImg.src = imgs.src;
+          imgText.innerHTML = imgs.alt;
+          expandImg.parentElement.style.display = "block";
+        }
+        </script>
+        
+      
+      <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img id="expandedImg" style="width:100%">
+        <div id="imgtext"></div>
+      </div>
+
+    <div>
+      
+        <h2 class="achievement">Achievement</h2>
+        <ul class="achieve">
+            <li>5th in POLITE 2022</li>
+            <li>Participated in Pesta Sukan</li>
+            <li>Praticipated in IVP competition</li>
+        </ul>
+    </div>
+    <div>
+        <h2 class="cheer">Team Cheer</h2>
+        <p>One Team, One Dream</p>
+    </div>
+
+    <script src="shop.js"></script>
+</body>
+</html>
