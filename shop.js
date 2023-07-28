@@ -138,16 +138,18 @@ function setItems(product){
                 ...cartItems,
                 [product.tag]: product
             }
-
-            product.inCart = 1;
+            cartItems[product.tag].incart = 1;
+            product.incart = 1;
         } else {
-            cartItems[product.tag].inCart +=1;
+            cartItems[product.tag].incart += 1;
+            product.incart += 1;
         }
     } else {
-        product.inCart = 1;
+        product.incart = 1;
         cartItems = {
             [product.tag]: product
-        }
+        };
+        cartItems[product.tag].incart = 1;
     }
     localStorage.setItem("productsInCart", JSON.stringify(cartItems));
 }
@@ -166,18 +168,17 @@ function totalCost(product) {
     }
 }
 function removeItem(tag) {
+    var oldAmt;
     let cartItems = localStorage.getItem('productsInCart');
     let cartCost = localStorage.getItem('totalCost');
     cartItems = JSON.parse(cartItems);
-    delete cartItems[tag];
-    localStorage.setItem("productsInCart", JSON.stringify(cartItems));
     for (let i = 0; i < products.length; i++) {
         let product = products[i];
         if (product.tag === tag) {
-            product.inCart = 0;
+            oldAmt = cartItems[tag].incart;
             document.querySelector("." + product.tag).outerHTML = "";
             cartCost = parseInt(cartCost);
-            localStorage.setItem('totalCost', cartCost - product.price);
+            localStorage.setItem('totalCost', cartCost - product.price * oldAmt);
             document.querySelector(".basketTotalContainer").innerHTML = `
                 <h4 class = "basketTotalTitle">
                     Basket Total
@@ -189,10 +190,11 @@ function removeItem(tag) {
             break;
         }
     }
-    
+    delete cartItems[tag];
     let productNumbers = localStorage.getItem('cartNumbers');
-    localStorage.setItem('cartNumbers', productNumbers - 1);
-    document.querySelector('.topnav span').textContent = productNumbers - 1;
+    localStorage.setItem('cartNumbers', productNumbers - oldAmt);
+    document.querySelector('.topnav span').textContent = productNumbers - oldAmt;
+    localStorage.setItem("productsInCart", JSON.stringify(cartItems));
 } 
 function displayCart() {
     let cartItems = localStorage.getItem("productsInCart");
@@ -209,8 +211,8 @@ function displayCart() {
                 <img src=${item.img_src}></img>
                 <span>${item.name}</span>
                 <span>$${item.price}.00</span>
-                <span>${item.inCart}</span> 
-                <span>$${item.inCart * item.price}.00</span>
+                <span>${item.incart}</span> 
+                <span>$${item.incart * item.price}.00</span>
                 
             </div>  
             
